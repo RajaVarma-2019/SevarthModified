@@ -42,8 +42,8 @@ const onListening = () => {
   const bind = typeof port === "string" ? "pipe " + port : "port " + port;
   debug("Listening on " + bind);
 };
-
-const port = normalizePort(process.env.PORT || "3000");
+app.use(express.static(_dirname + '/dist'));
+const port = normalizePort(process.env.PORT || "8080");
 app.set("port", port);
 
 const server = http.createServer(app);
